@@ -1,0 +1,187 @@
+/* global reset + sensible defaults */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* background image (if you have one) - keeps fixed */
+body {
+  background-color: white;
+  background-size:cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgb(247, 42, 19);
+}
+
+/* main layout - reserve navbar width on left */
+.app {
+  display: flex;
+  width: calc(100% - 205px);
+  margin-left: 205px; /* width of your navbar */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* content area: allow natural flow and scrolling if needed */
+.content {
+  flex: 1;
+  display: block;          /* allow pages to decide layout */
+  min-height: 100vh;       /* at least full height */
+  padding: 40px 24px;      /* spacing so text doesn't touch edges */
+  box-sizing: border-box;
+  overflow-y: auto;        /* enable vertical scroll when content is taller */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Home page container */
+.home-page, .home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* vertically center */
+  align-items: center;          /* horizontally center */
+  min-height: calc(100vh - 80px);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(-50px); /* move slightly up */
+}
+
+/* Title styling */
+.home-title, h1 {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 50px); /* responsive size */
+  line-height: 1.05;
+  word-break: break-word;
+  color: #d4af37; /* gold */
+}
+
+/* Subtitle styling */
+.home-subtitle, p {
+  margin-top: 10px;
+  font-size: clamp(14px, 2.4vw, 20px);
+  word-break: break-word;
+  color: #fff;
+}
+
+
+
+/* Pages with tables (DailyRates etc.) */
+.daily-rates, .products-container, .cart-container, .contact-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* example table styles - ensure table can shrink on small screens */
+.daily-rates table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,1); /* table bg visible on site */
+  color: #000;
+}
+
+/* general table cells */
+.daily-rates th, .daily-rates td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+/* If you hide scrollbars before, revert — accessibility first */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 6px;
+}
+
+/* small screens adjustments */
+@media (max-width: 700px) {
+  .app { margin-left: 0; width: 100%; } /* if navbar collapses on mobile */
+  .content { padding: 20px; }
+  .home-title { font-size: 28px; }
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ✅ prevents the page from scrolling vertically */
+  height: 100%;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-out forwards;
+  animation-delay: 3s; /* screen visible for 3s */
+}
+
+.splash-image {
+  width: 300px;
+  max-width: 80%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.splash-text {
+  margin-top: 20px;
+  color: #d4af37;
+  font-size: 28px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+
+

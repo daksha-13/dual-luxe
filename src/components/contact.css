@@ -1,0 +1,24 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ✅ vertically centers content */
+  align-items: center;       /* ✅ horizontally centers content */
+  min-height: 100vh;         /* ✅ full page height */
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;            /* ✅ centers horizontally in case of smaller width */
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.contact-page h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 20px;
+  margin: 15px 0;
+}

@@ -1,0 +1,68 @@
+/* Animation: Slide from top */
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-from-top {
+  animation: slideTop 1.2s ease-out forwards;
+}
+
+/* Animation: Slide from left */
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-from-left {
+  animation: slideLeft 1.4s ease-out forwards;
+}
+
+/* Button improvements */
+.shop-btn {
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: none;
+  background: gold;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.shop-btn:hover {
+  background: #e4b300;
+  transform: scale(1.05);
+}
+
+.tagline {
+  color: #d4bc37; /* ✅ Gold color */
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.home-page, .home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px);
+}
+.brand-name {
+  color: rgb(228, 206, 39);
+}
+
